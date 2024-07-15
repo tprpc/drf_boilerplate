@@ -47,6 +47,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'rest_framework',
+
+    "allauth",  # django-allauth
+    "allauth.account",  # django-allauth
+    "allauth.socialaccount",  # django-allauth
+    "allauth.socialaccount.providers.google",  # django-allauth for google OAuth
+    "dj_rest_auth",  # dj-rest-auth
+    "dj_rest_auth.registration",  # dj-rest-auth
+    "rest_framework_simplejwt",  # djangorestframework-simplejwt
 ]
 
 MIDDLEWARE = [
@@ -57,7 +65,25 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    "allauth.account.middleware.AccountMiddleware",  # django-allauth
+
 ]
+
+# allauth config, https://docs.allauth.org/en/latest/account/configuration.html
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None  # 커스텀한 user model엔 name field가 있다.
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_EMAIL_VERIFICATION = "none" # "mandatory"  # Setting this to "mandatory" requires ACCOUNT_EMAIL_REQUIRED to be True.
+
+# dj-rest-auth config, https://dj-rest-auth.readthedocs.io/en/latest/configuration.html
+REST_AUTH = {
+    "TOKEN_MODEL": None,  # jwt token 쓸꺼임!, 이 경우 밑에 값이 무조건 True 거나 session 방식
+    "USE_JWT": True,  # jwt token based auth를 위해 True
+    "JWT_AUTH_HTTPONLY": False,  # refresh_token를 사용할 예정이라면, False로 설정을 바꿔야한다.
+}
+
 
 ROOT_URLCONF = 'drf_boilerplate.urls'
 
