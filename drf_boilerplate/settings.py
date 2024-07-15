@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     "dj_rest_auth",  # dj-rest-auth
     "dj_rest_auth.registration",  # dj-rest-auth
     "rest_framework_simplejwt",  # djangorestframework-simplejwt
+    "django.contrib.sites", # allauth 를 활용하기 위해 "callback url" 을 등록해야 하는데, allauth 에서는 social login을 위해 기본적으로 sites 패키지에서 세팅된 사이트 도메인을 가져온다.
 ]
 
 MIDDLEWARE = [
