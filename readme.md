@@ -20,6 +20,14 @@ cp .env.example .env
 python manage.py runserver
 ```
 
+# Trouble shooting
+
+## Site matching query does not exist
+> python manage.py shell
+> 
+> from django.contrib.sites.models import Site
+> Site.objects.create(name='localhost:8000', domain='localhost:8000')
+
 
 # References
 
