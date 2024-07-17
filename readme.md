@@ -29,6 +29,22 @@ python manage.py runserver
 > Site.objects.create(name='localhost:8000', domain='localhost:8000')
 
 
+## Social Application 하고 Sites 모델에 내용 추가
+
+### Site 
+
+domain name: localhost:8000
+
+### Social Application
+
+Provider: Google
+Name: (하고싶은대로)
+Client Id: 구글 Oauth 2.0 로그인의 Client Id
+Secret Key: 구글 Oauth 2.0 로그인의 Client Secret Key
+Sites: 위 사이트 추가(또는 모두 추가)
+
+
+
 # References
 
 https://wikidocs.net/91422

@@ -77,6 +77,8 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_VERIFICATION = "none" # "mandatory"  # Setting this to "mandatory" requires ACCOUNT_EMAIL_REQUIRED to be True.
+LOGIN_REDIRECT_URL = "/accounts/"
+
 
 # dj-rest-auth config, https://dj-rest-auth.readthedocs.io/en/latest/configuration.html
 REST_AUTH = {
