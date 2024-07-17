@@ -20,6 +20,13 @@ cp .env.example .env
 python manage.py runserver
 ```
 
+## 바로 장고 세션만으로 로그인 하고 싶다면
+
+> http://localhost:8000/accounts/login/
+
+## 
+
+
 # Trouble shooting
 
 ## Site matching query does not exist
@@ -33,7 +40,7 @@ python manage.py runserver
 
 ### Site 
 
-domain name: localhost:8000
+domain name: localhost:8000 (위에 꺼 하면 괜찮음)
 
 ### Social Application
 
